@@ -9,6 +9,10 @@ def annotate_paragraphs(csv_file):
     
     # Iterate through the paragraphs
     for i in range(start_index, len(df)):
+        print('--------------------------------------------------------------------------------')
+
+        print(f'[{i} / {len(df)}]')
+
         paragraph1 = df.loc[i, 'paragraph1']
         paragraph2 = df.loc[i, 'paragraph2']
         
@@ -33,8 +37,11 @@ def annotate_paragraphs(csv_file):
         
         # Check if the user wants to continue annotating
         cont = input("Do you want to continue annotating? (y/n): ")
+
+        print('--------------------------------------------------------------------------------')
         if cont.lower() != 'y':
             break
+
 
 # Example usage
 annotate_paragraphs('./data/test_annotation.csv')
